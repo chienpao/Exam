@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-class LalamoveApiModule {
+class ApiModule {
 
     companion object {
         const val BASE_URL = "https://mock-api-mobile.dev.lalamove.com"
@@ -17,13 +17,13 @@ class LalamoveApiModule {
 
     @Provides
     @Singleton
-    internal fun getLalamoveApiService(okHttpClient: OkHttpClient): LalamoveApiService {
+    internal fun getLalamoveApiService(okHttpClient: OkHttpClient): ApiService {
         return Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(BASE_URL)
                 .client(okHttpClient)
                 .build()
-                .create<LalamoveApiService>(LalamoveApiService::class.java)
+                .create<ApiService>(ApiService::class.java)
     }
 }
