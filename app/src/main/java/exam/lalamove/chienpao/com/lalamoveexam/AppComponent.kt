@@ -8,8 +8,7 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [MainModule::class, OkHttpModule::class, LalamoveApiModule::class])
-interface MainComponent {
+interface AppComponent {
     fun inject(application: MainApplication)
-    fun inject(activity: MainActivity)
     fun getContext(): Context
 }

@@ -1,10 +1,12 @@
-package exam.lalamove.chienpao.com.lalamoveexam
+package exam.lalamove.chienpao.com.lalamoveexam.main
 
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-
+import exam.lalamove.chienpao.com.lalamoveexam.R
+import exam.lalamove.chienpao.com.lalamoveexam.api.data.Deliver
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -29,5 +31,13 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    fun showErrorMessageOnSnackBar(errorMessage: String) {
+        Snackbar.make(rootLayout, errorMessage, Snackbar.LENGTH_LONG).show()
+    }
+
+    fun updateDeliveries(deliveries: ArrayList<Deliver>?) {
+        //TODO: Need to add deliveries to recycler view
     }
 }
