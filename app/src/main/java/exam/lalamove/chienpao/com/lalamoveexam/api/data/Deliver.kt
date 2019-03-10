@@ -10,7 +10,7 @@ import com.google.gson.annotations.SerializedName
         {
         "id": 0,
         "description": "Deliver documents to Andrio",
-        "imageUrl": "https://s3-ap-southeast-1.amazonaws.com/lalamove-mock-api/images/pet-8.jpeg",
+        "imageUrl": "https://s3-ap-southeast-1.amazonaws.com/xxxxxxxx-mock-api/images/pet-8.jpeg",
         "location": {
         "lat": 22.336093,
         "lng": 114.155288,

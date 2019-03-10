@@ -17,7 +17,7 @@ class ApiModule {
 
     @Provides
     @Singleton
-    internal fun getLalamoveApiService(okHttpClient: OkHttpClient): ApiService {
+    internal fun getApiService(okHttpClient: OkHttpClient): ApiService {
         return Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
