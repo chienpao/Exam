@@ -1,6 +1,8 @@
 package exam.lalamove.chienpao.com.lalamoveexam.api.data
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
 /**
  * The deliveries data model
@@ -19,16 +21,18 @@ import com.google.gson.annotations.SerializedName
     ]
  */
 
+@Parcelize
 data class Deliver(
         @SerializedName("id") val id: Int,
         @SerializedName("description") val description: String,
         @SerializedName("imageUrl") val imageUrl: String,
-        @SerializedName("location") val location: Location)
+        @SerializedName("location") val location: Location): Parcelable
 
+@Parcelize
 data class Location(
-        @SerializedName("lat") val lat: Float,
-        @SerializedName("lng") val lng: Float,
-        @SerializedName("address") val address: String
-        )
+        @SerializedName("lat") val lat: Double,
+        @SerializedName("lng") val lng: Double,
+        @SerializedName("address") val address: String): Parcelable
+
 
 

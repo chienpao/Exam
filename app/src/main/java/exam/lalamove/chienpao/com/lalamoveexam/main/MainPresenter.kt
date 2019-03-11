@@ -13,7 +13,6 @@ import javax.inject.Inject
 class MainPresenter @Inject constructor(private val context: Context,
                                         private val view: MainActivity,
                                         private val model: MainModel) {
-    private var mainDisposable: Disposable? = null
 
     fun getDeliveries(offset: Int, limit: Int) {
         model.getApiService(offset, limit)

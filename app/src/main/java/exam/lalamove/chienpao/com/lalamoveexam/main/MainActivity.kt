@@ -1,23 +1,23 @@
 package exam.lalamove.chienpao.com.lalamoveexam.main
 
-import android.database.Cursor
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v4.app.LoaderManager
-import android.support.v4.content.CursorLoader
-import android.support.v4.content.Loader
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
 import exam.lalamove.chienpao.com.lalamoveexam.MainApplication
 import exam.lalamove.chienpao.com.lalamoveexam.R
 import exam.lalamove.chienpao.com.lalamoveexam.api.data.Deliver
+import exam.lalamove.chienpao.com.lalamoveexam.detail.DetailActivity
 import exam.lalamove.chienpao.com.lalamoveexam.main.adapter.DeliveryAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import javax.inject.Inject
+import android.support.v4.app.NotificationCompat.getExtras
+
+
 
 class MainActivity : AppCompatActivity(), DeliveryAdapter.Callback {
 
@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity(), DeliveryAdapter.Callback {
     companion object {
         private const val DEFAULT_OFFSET = 0
         private const val DEFAULT_LIMIT = 20
+        const val DELIVERY_KEY = "delivery"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,7 +68,9 @@ class MainActivity : AppCompatActivity(), DeliveryAdapter.Callback {
     }
 
     override fun onItemClick(deliver: Deliver) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val intent = Intent(this, DetailActivity::class.java)
+        intent.putExtra(DELIVERY_KEY, deliver)
+        startActivity(intent)
     }
 
     override fun onLoadItem(lastId: Int) {
