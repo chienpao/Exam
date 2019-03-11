@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Exam</string>
     <string name="action_settings">Settings</string>
-    <string name="get_deloveries_error_msg">Get deliveries failed, please check the internet</string>
+    <string name="get_deliveries_success_msg">Get deliveries success</string>
+    <string name="get_deliveries_error_msg">Get deliveries failed, please check the internet</string>
+    <string name="get_deliveries_empty">No more deliveries</string>
+    <string name="main_title">Things to Deliver</string>
 </resources>

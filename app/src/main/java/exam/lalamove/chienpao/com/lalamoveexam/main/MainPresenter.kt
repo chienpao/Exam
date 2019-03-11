@@ -16,17 +16,22 @@ class MainPresenter @Inject constructor(private val context: Context,
     private var mainDisposable: Disposable? = null
 
     fun getDeliveries(offset: Int, limit: Int) {
-        model.getLalamoveApiService(offset, limit)
+        model.getApiService(offset, limit)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ response ->
                     Timber.d("Get deliveries success")
                     if (response.isSuccessful) {
                         view.updateDeliveries(response.body())
+                        view.showMessageOnSnackBar(context.getString(R.string.get_deliveries_success_msg))
+
+                        if (response.body()?.size == 0) {
+                            view.showMessageOnSnackBar(context.getString(R.string.get_deliveries_empty))
+                        }
                     }
                 }, { throwable ->
                     Timber.e("Get deliveries failed ${throwable.message}")
-                    view.showErrorMessageOnSnackBar(context.getString(R.string.get_deloveries_error_msg))
+                    view.showMessageOnSnackBar(context.getString(R.string.get_deliveries_error_msg))
                 })
     }
 }

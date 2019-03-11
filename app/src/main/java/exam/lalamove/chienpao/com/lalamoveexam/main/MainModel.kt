@@ -13,7 +13,7 @@ import javax.inject.Inject
 class MainModel @Inject constructor(private val context: Context,
                                     private val apiService: ApiService) {
 
-    fun getLalamoveApiService(offset: Int, limit: Int): Single<Response<ArrayList<Deliver>>> {
+    fun getApiService(offset: Int, limit: Int): Single<Response<ArrayList<Deliver>>> {
         return apiService.getDeliveries(offset, limit)
     }
 }

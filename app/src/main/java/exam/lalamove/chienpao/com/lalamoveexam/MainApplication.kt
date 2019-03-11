@@ -5,7 +5,7 @@ import timber.log.Timber
 
 class MainApplication : Application() {
 
-    lateinit var mainModule: MainModule
+    lateinit var appModule: AppModule
     lateinit var appComponent: AppComponent
 
     override fun onCreate() {
@@ -15,9 +15,9 @@ class MainApplication : Application() {
     }
 
     private fun initInjections() {
-        mainModule = MainModule(this)
+        appModule = AppModule(this)
         appComponent = DaggerAppComponent.builder()
-                .mainModule(mainModule)
+                .appModule(appModule)
                 .build().apply {
                     inject(this@MainApplication)
                 }
