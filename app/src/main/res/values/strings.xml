@@ -5,5 +5,6 @@
     <string name="get_deliveries_error_msg">Get deliveries failed, please check the internet</string>
     <string name="get_deliveries_empty">No more deliveries</string>
     <string name="main_title">Things to Deliver</string>
+    <string name="detail_title">Delivery Details</string>
     <string name="title_activity_detail">DetailActivity</string>
 </resources>

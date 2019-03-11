@@ -1,6 +1,11 @@
 # Exam by Pao
 
+## Software structure
+- MVP
+- DI
+
 ## App Screenshot
+
 
 ## Use Library
 - Dagger2 for dependency injection
@@ -25,10 +30,20 @@ android:value="@string/google_maps_key" />
 6. Now we can start to use Google Map SDK!
 
 ## Requirement
-- (done) Source code must be stored in a Git repository
-- (not yet) App should cache deliveries (Cached deliveries should be available offline)
+- (Done) Source code must be stored in a Git repository
+- (Not yet) App should cache deliveries (Cached deliveries should be available offline)
 ---> Will use cursorLoader with Recycler to save cache in database
-- (done) Should implement pagination, retrieve up to 20 items per page
-- (done) Candidates are free to use any libraries
+- (Done) Should implement pagination, retrieve up to 20 items per page
+- (Done) Candidates are free to use any libraries
 - (Pass) Project must compile ./gradlew build
+
+## Additional functions
+- (Done) Handle no more deliveries scenario (will show message for user)
+
+## Future functions
+- Unit test
+- CI integration
+
+## Author
+Powered by Pao (chienpao@chienpao.com)
 

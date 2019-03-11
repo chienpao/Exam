@@ -32,6 +32,8 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(R.layout.activity_detail)
         initInjections()
         setSupportActionBar(toolbar)
+        toolbarTitle.text = getString(R.string.detail_title)
+        title = ""
 
         updateUI(intent)
     }
